@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 62.5%;
+}
+
+h3, h4 {
+  color: #00FF00;
+  font-size: 1.8rem;
+}
+
+button {
+  background: #00FF00;
+  color: black;
+  padding: 1px 5px;
+  font-size: 1.1rem;
+  border: #00FF00 2px solid;
+  border-radius: 5px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #111010;
+}
+
+.main__board {
+  min-width: 40%;
+  width: 40%;
+  height: 90%;
+}
+
+.board {
+  width: 60%;
+  height: 100%;
+  float: left;
+  background: black;
+  border: #05ee13 5px solid;
+}
+
+.infor {
+  width: 35%;
+  height: 100%;
+  float: right;
+  background: black;
+  border: #05ee13 5px solid;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.infor__time {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.infor__score {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+input {
+  width: 50%;
+  height: 100%;
+}
+
+.infor__level {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.infor__action--btn {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */

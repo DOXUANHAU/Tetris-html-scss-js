@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<main>
+
+    <section class="main__board">
+        <canvas class="board">
+        </canvas>
+        <aside class="infor">
+            <section class="infor__time">
+                <h3>TIME</h3>
+                <h4 id="time__show">00:00:00</h4>
+            </section>
+            <section class="infor__score ">
+                <h3 class="infor__score--text">SCORE</h3>
+                <h4 class="infor__score--point" id="score__show">0 / 100</h4>
+            </section>
+            <section class="infor__level ">
+                <button class="level__decrement btn"><</button>
+                                     <h4 id="level__show">Level 1</h4>
+                <button class="infor__level__increment btn"> ></button>
+            </section>
+            <section class="infor__action--btn ">
+                <button class="pause">PAUSE</button>
+                <button class="destroy">DESTROY</button>
+                <button class="play">PLAY</button>
+                <button class="sound">SOUND</button>
+            </section>
+        </aside>
+    </section>
+
+</main>
+<audio src="./audio/winner.mp3" id="winner"></audio>
+<audio src="./audio/y2mate.com%20-%20SÓNG%20GIÓ%20%20KICM%20x%20JACK%20%20OFFICIAL%20MUSIC%20VIDEO.mp3" id="startAudio"></audio>
+<audio src="./audio/y2mate.com%20-%20Game%20Over%20sound%20effect.mp3" id="gameOver"></audio>
+<audio src="./audio/y2mate.com%20-%20Killing%20Spree%20Unreal%20Tournament%20Sound.mp3" id="complete"></audio>
+<audio src="./audio/pop_1.mp3" id="pop"></audio>
+
+</body>
+
+<script src="scripts.js"></script>
+<script src="arrayProcess.js"></script>
+<script src="tetrominoes.js"></script>
+<script src="board.js"></script>
+<script src="tetrisGame.js"></script>
+<script src="initialization.js"></script>
+</html>

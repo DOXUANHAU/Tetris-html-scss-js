@@ -1,0 +1,104 @@
+//VAR
+$black-color: black;
+$yellow-bg-btn:yellow;
+$green-color: #00FF00;
+$border-style: #05ee13 5px solid;
+
+@mixin btn-style {
+  background: $green-color;
+  color: $black-color;
+  padding: 1px 5px;
+  font-size: 1.1rem;
+  border:#00FF00 2px solid;
+  border-radius: 5px
+}
+
+
+@mixin flex-style-center($display,$wrap,$drirection,$align,$justify) {
+  display: $display;
+  flex-direction: $drirection;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+
+@mixin board-style-float($float,$back-ground-color,$border-board-color) {
+  float: $float;
+  background: $back-ground-color;
+  border: $border-board-color;
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 62.5%;
+}
+
+h3, h4 {
+  color: $green-color;
+  font-size: 1.8rem
+}
+button{
+  @include btn-style();
+}
+
+main {
+  @include flex-style-center(flex,nowrap,row, center, center);
+  width: 100vw;
+  height: 100vh;
+background: #111010;
+}
+
+//MAIN--BOARD
+.main__board {
+  min-width: 40%;
+  width: 40%;
+  height: 90%;
+}
+
+//BOARD
+.board {
+  width: 60%;
+  height: 100%;
+  @include board-style-float(left, $black-color, $border-style);
+
+}
+
+//ASIDE
+
+.infor {
+  width: 35%;
+  height: 100%;
+  @include board-style-float(right, $black-color, $border-style);
+    @include flex-style-center(flex,nowrap,column, center, space-around);
+
+}
+.infor__time{
+  width: 100%;
+  @include flex-style-center(flex,nowrap,column, center, space-around);
+}
+.infor__score{
+  width: 100%;
+  @include flex-style-center(flex,nowrap,column, center, space-around);
+
+}
+input{
+  width: 50%;
+  height: 100%;
+}
+.infor__level {
+  width: 100%;
+  @include flex-style-center(flex,nowrap,row, center, space-around);
+}
+
+
+.infor__action--btn{
+  width: 100%;
+  height: 20%;
+  @include flex-style-center(flex,wrap,row, center, space-around);
+}
