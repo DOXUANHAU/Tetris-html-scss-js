@@ -5,12 +5,64 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--    link font chữ-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+
+    <!--    -->
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
+<section class="game_infor">
+    <h1>HƯỚNG DẪN SỬ DỤNG TRÒ CHƠI!!</h1>
+    <section class="table">
+        <table>
+            <tr>
+                <td></td>
+                <td><p>Đây là trò chơi xếp hình , nhiệm vụ của bạn là xếp sao cho các khối hình thành 1 hàng thì bạn sẽ
+                    được cộng 10 điểm vào điểm chơi . Nếu điểm >= 100 thì bạn sẽ qua màn mới (nên nhớ bạn có thể skip
+                    level bằng cách nhấn vào nút skip kế bên level nhé) . </p></td>
+            </tr>
+            <tr>
+                <td>level 1</td>
+                <td><p>Level 1 là level dể nhất cho người mới để tập làm quen nên cố gắn nhé !!!.</p></td>
+            </tr>
+            <tr>
+                <td>level 2</td>
+                <td><p>Lúc này độ khó sẽ tăng lên 1 chút bằng việc xuất hiện những ô phía dưới khiến bạn dể kết thúc trò
+                    chơi hơn nên cố gắn nhé .</p></td>
+            </tr>
+            <tr>
+                <td>level 3</td>
+                <td><p>Tại level 3 cứ mỗi 15s là sẽ có 1 hàng xuất hiện phía dưới giúp bạn khó hơn trong việc kết thúc
+                    ván game .</p></td>
+            </tr>
+            <tr>
+                <td>level 4</td>
+                <td><p>Level 4 trò chơi sẽ đc thay đổi tí xíu bằng việc khi đến 1 điểm nào đó thì khối hình sẽ xuất hiện
+                    bất ngờ ở một nơi nào đó trong màn hình .</p></td>
+            </tr>
+            <tr>
+                <td>level 5</td>
+                <td><p>Tại level 5 bạn sẽ phải sử dụng khả năng xếp hình với khả năng ghi nhớ vị trí vì khi 1 khối hình
+                    xuất hiện thì những khối hình khác ở dưới sẽ biến mất đến 1 lúc mới hiện ra .</p></td>
+            </tr>
+            <tr>
+                <td>level 6</td>
+                <td><p> Ở Level cuối cùng này thì sẽ có 1 hình vuông nhỏ chạy ừ trái sang , nó sẽ gây khó nếu bạn đụng
+                    phải nó nên hãy cố gắn tránh xa nhé !.</p></td>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <button id="play">GAME ON!!!</button>
+        <button id="profile">ProFile</button>
+    </section>
+</section>
 <main>
-
     <section class="main__board">
         <canvas class="board">
         </canvas>
@@ -25,31 +77,67 @@
             </section>
             <section class="infor__level ">
                 <button class="level__decrement btn"><</button>
-                                     <h4 id="level__show">Level 1</h4>
-                <button class="infor__level__increment btn"> ></button>
+                <h4 id="level__show">Level 1</h4>
+                <button class="level__increment btn"> ></button>
             </section>
             <section class="infor__action--btn ">
                 <button class="pause">PAUSE</button>
-                <button class="destroy">DESTROY</button>
-                <button class="play">PLAY</button>
-                <button class="sound">SOUND</button>
+                <button class="destroy">REPLAY</button>
+                <button class="sound">Mute</button>
             </section>
         </aside>
     </section>
 
 </main>
+
+<!--victory-->
+<section class="notifications__victory notifications notifications-flex">
+    <h1>VICTORY</h1>
+    <h3>YOU WERE DEFEAT THIS LEVEL </h3>
+    <h4>COME TO NEXT ROUND ??</h4>
+    <section>
+        <button class="notifi__next--victory">Next Round</button>
+        <button class="notifi__replay--victory">Replay</button>
+    </section>
+</section>
+
+<!--deafeat -->
+
+<section class="notifications__defeat notifications notifications-flex">
+    <h1>DEFEAT</h1>
+    <h3>YOU LOSS THIS LEVEL</h3>
+    <h4>PLAY AGAIN OR YOU SCARED ?</h4>
+    <section>
+        <button class="notifi__replay--defeat">Replay</button>
+    </section>
+</section>
+
+<section class="pop_up">
+    <button id="close"> x </button>
+    <h1 class="name_pop">DO XUAN HAU</h1>
+    <h1>ID : 21130349 .</h1>
+    <h1>Class : DH21-DTB .</h1>
+    <h1>Subject : Information Techonology .</h1>
+    <h1>Mid-term project for FRONTEND PROGRAMMING subject .</h1>
+    <h1>Project Name :  GAME TETRIS .</h1>
+    <h1>Subject'Professior :  Mr.LONG .</h1>
+    <form action="https://www.youtube.com/watch" id="formVideo" target="_blank">
+        <label>
+            <h3>Tutorial Video  --> </h3>
+            <input type="text" name="v" id="" value="HDrkQZjlA38">
+            <button type="submit" > Click me !!!</button>
+        </label>
+    </form>
+</section>
+
+
 <audio src="./audio/winner.mp3" id="winner"></audio>
-<audio src="./audio/y2mate.com%20-%20SÓNG%20GIÓ%20%20KICM%20x%20JACK%20%20OFFICIAL%20MUSIC%20VIDEO.mp3" id="startAudio"></audio>
+<audio src="./audio/y2mate.com%20-%20SÓNG%20GIÓ%20%20KICM%20x%20JACK%20%20OFFICIAL%20MUSIC%20VIDEO.mp3"
+       id="startAudio"></audio>
 <audio src="./audio/y2mate.com%20-%20Game%20Over%20sound%20effect.mp3" id="gameOver"></audio>
 <audio src="./audio/y2mate.com%20-%20Killing%20Spree%20Unreal%20Tournament%20Sound.mp3" id="complete"></audio>
 <audio src="./audio/pop_1.mp3" id="pop"></audio>
 
 </body>
-
 <script src="scripts.js"></script>
-<script src="arrayProcess.js"></script>
-<script src="tetrominoes.js"></script>
-<script src="board.js"></script>
-<script src="tetrisGame.js"></script>
-<script src="initialization.js"></script>
 </html>

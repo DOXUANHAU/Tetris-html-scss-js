@@ -1,6 +1,6 @@
 //VAR
 $black-color: black;
-$yellow-bg-btn:yellow;
+$yellow-bg-btn: yellow;
 $green-color: #00FF00;
 $border-style: #05ee13 5px solid;
 
@@ -9,8 +9,13 @@ $border-style: #05ee13 5px solid;
   color: $black-color;
   padding: 1px 5px;
   font-size: 1.1rem;
-  border:#00FF00 2px solid;
-  border-radius: 5px
+  border: #00FF00 2px solid;
+  border-radius: 5px;
+
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 
@@ -36,25 +41,94 @@ $border-style: #05ee13 5px solid;
 }
 
 body {
+
+  overflow: hidden;
+  cursor: pointer;
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   font-size: 62.5%;
+  @include flex-style-center(flex, nowrap, column, center, space-around);
+  background: #111010;
 }
 
 h3, h4 {
   color: $green-color;
   font-size: 1.8rem
 }
-button{
+
+button {
   @include btn-style();
 }
 
-main {
-  @include flex-style-center(flex,nowrap,row, center, center);
-  width: 100vw;
+
+//infor game
+.game_infor {
+  background: #111010;
+  color: greenyellow;
+  width: 1200px;
   height: 100vh;
-background: #111010;
+  transition: all 0s 0s linear;
+  @include flex-style-center(flex, nowrap, column, center, space-around);
 }
 
+@keyframes disapper {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.game_infor h1 {
+  font-size: 2rem;
+}
+
+.table {
+  width: 80%;
+}
+
+.table table {
+  font-size: 1rem;
+  width: 100%; /* Chiều rộng của bảng */
+  border: 1px solid #000; /* Viền của bảng */
+  border-collapse: collapse; /* Gộp viền của các ô */
+}
+
+table tr {
+  word-break: keep-all;
+  //border: 3px solid yellowgreen; /* Viền của dữ liệu cột */
+  padding: 8px; /* Khoảng cách giữa nội dung và viền của ô */
+}
+
+table td {
+  border: 3px solid $green-color; /* Viền của dữ liệu cột */
+  padding: 5px 20px; /* Khoảng cách giữa nội dung và viền của ô */
+  text-align: center;
+}
+
+.game_infor button {
+  width: 200px;
+  height: 50px;
+}
+
+
 //MAIN--BOARD
+main {
+  @include flex-style-center(none, nowrap, row, center, center);
+  width: 1100px;
+  height: 100vh;
+  background: #111010;
+
+}
+
+
 .main__board {
   min-width: 40%;
   width: 40%;
@@ -75,30 +149,203 @@ background: #111010;
   width: 35%;
   height: 100%;
   @include board-style-float(right, $black-color, $border-style);
-    @include flex-style-center(flex,nowrap,column, center, space-around);
+  @include flex-style-center(flex, nowrap, column, center, space-around);
 
 }
-.infor__time{
+
+.infor__time {
   width: 100%;
-  @include flex-style-center(flex,nowrap,column, center, space-around);
+  @include flex-style-center(flex, nowrap, column, center, space-around);
 }
-.infor__score{
+
+.infor__score {
   width: 100%;
-  @include flex-style-center(flex,nowrap,column, center, space-around);
+  @include flex-style-center(flex, nowrap, column, center, space-around);
 
 }
-input{
+
+input {
   width: 50%;
   height: 100%;
 }
+
 .infor__level {
   width: 100%;
-  @include flex-style-center(flex,nowrap,row, center, space-around);
+  @include flex-style-center(flex, nowrap, row, center, space-around);
 }
 
 
-.infor__action--btn{
+.infor__action--btn {
   width: 100%;
   height: 20%;
-  @include flex-style-center(flex,wrap,row, center, space-around);
+  @include flex-style-center(flex, nowrap, column, center, space-around);
 }
+
+//notifications
+.notifications-flex {
+  @include flex-style-center(none, nowrap, column, center, space-around);
+
+}
+
+.notifications {
+  width: 40%;
+  height: 100vh;
+  background: #161821;
+  box-shadow: inset 2px 2px 4px rgb(180, 12, 238);
+  position: absolute;
+}
+
+.notifications h1 {
+  font-size: 2rem;
+  color: yellow;
+  text-shadow: 6px 6px 10px rgba(232, 201, 13, 0.5);
+  transition: all 2s 0s linear;
+  animation: wordAnima 3s infinite;
+}
+
+.notifications section {
+  width: 90%;
+  @include flex-style-center(flex, nowrap, row, center, space-around);
+}
+
+.notifications button {
+  width: 100px;
+  height: 50px;
+}
+
+.notifications__defeat h1 {
+  color: red;
+}
+
+.notifi_anima_show {
+  animation: notifi_show 2s forwards;
+}
+
+.notifi_anima_up {
+  animation: notifi_up 2s forwards;
+}
+
+
+@keyframes notifi_show {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+
+    transform: translateY(0%);
+  }
+}
+
+@keyframes notifi_up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes wordAnima {
+  0% {
+    transform: translateY(0%);
+
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+//pop-up
+.pop_up {
+  width: 60vw;
+  height: 95vh;
+  background: $black-color;
+  color: $green-color;
+  @include flex-style-center(none, nowrap, column, center, space-evenly);
+  position: absolute;
+  border-radius: 20px;
+  border: 3px #00FF00 solid;
+  transition: all 2s 0s linear;
+  text-shadow: 6px 6px 10px $green-color;
+}
+
+.pop_up h1 {
+  font-size: 1.5rem;
+}
+
+.pop_up .name_pop {
+  font-size: 2rem;
+  animation: shake 3s infinite;
+  transition: all 4s 3s linear;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  20%, 60%, 100% {
+    transform: rotate(5deg);
+  }
+  40%, 80% {
+    transform: rotate(-5deg);
+  }
+
+}
+
+
+.pop_up #close {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+@keyframes showUp {
+  0% {
+    transform: translateX(-150%) rotate(1turn);
+  }
+  100% {
+
+    transform: translateX(0%);
+  }
+
+}
+
+@keyframes hiddenUp {
+  0% {
+    transform: translateX(0%) rotate(1turn);
+  }
+  100% {
+    transform: translateX(200%);
+    display: none;
+  }
+
+}
+
+//form
+#formVideo {
+  width: 100%;
+  @include flex-style-center(flex, nowrap, row, center, space-evenly);
+
+}
+
+#formVideo label {
+  width: 50%;
+  @include flex-style-center(flex, nowrap, row, center, space-around);
+}
+
+#formVideo input {
+  display: none;
+}
+
+#formVideo button[type='submit'] {
+  @include btn-style();
+  width: 30%;
+  font-size: 1.2rem;
+  background: $yellow-bg-btn;
+}
+
